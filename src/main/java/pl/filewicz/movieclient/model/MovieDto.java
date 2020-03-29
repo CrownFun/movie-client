@@ -12,7 +12,8 @@ public class MovieDto {
     private String director;
     private double rate;
     private Genre genre;
-    private Status status;
+    private StatusDto status;
+    private Actor actor;
 
 
 }

@@ -3,6 +3,7 @@ package pl.filewicz.movieclient.usecase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.filewicz.movieclient.client.MovieClient;
+import pl.filewicz.movieclient.mapper.MovieCreator;
 import pl.filewicz.movieclient.mapper.MovieMapper;
 import pl.filewicz.movieclient.model.Movie;
 import pl.filewicz.movieclient.model.MovieDto;
@@ -12,25 +13,32 @@ import pl.filewicz.movieclient.model.MovieDto;
 public class SendMovieToCinema {
 
     private MovieClient movieClient;
+    private MovieCreator movieCreator;
 
-    public void execute(String title){
+
+    public void execute(String title) {
 
         //pobieranie
         Movie movie = movieClient.getMovieByTitle(title);
 
 
-        //mapowanie
-        MovieDto movieDto = MovieMapper.INSTANCE.movieToMovieDto(movie);
-
-        //dociaganie
+        //mapowanie i dociaganie
+        movieCreator.cretaeMovieDto(movie);
 
 
-        //wysylka
 
-        //zmianastatustu
+/**
+ //wysylka
+
+ trzeba w rest pai napisac metose ktora postem przesyła sie movieDto , cos tam werifkuje, i zwraca odpwoiedz np 422
+
+ **/
+
+//zmianastatustu
 
 
         //zapis do bazy
+
 
 
         //pokaz wynik

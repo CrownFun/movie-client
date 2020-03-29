@@ -15,6 +15,7 @@ public class Movie {
     private Genre genre;
     private long boxoffice;
     private Status status;
+    private Actor actor;
 
 
 
