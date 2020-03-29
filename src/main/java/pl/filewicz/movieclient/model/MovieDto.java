@@ -7,23 +7,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MovieDto {
 
-    private long id;
     private String title;
     private int year;
     private String director;
     private double rate;
     private Genre genre;
-    private long boxoffice;
     private Status status;
 
 
-    public MovieDto(String title, int year, String director, double rate, Genre genre, long boxoffice, Status status) {
-        this.title = title;
-        this.year = year;
-        this.director = director;
-        this.rate = rate;
-        this.genre = genre;
-        this.boxoffice = boxoffice;
-        this.status = status;
-    }
 }
